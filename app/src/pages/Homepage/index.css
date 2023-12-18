@@ -9,7 +9,6 @@ body {
   background-position: center;
   height: 100vh;
   animation: bg-load 1.5s;
-  filter: brightness(0.8);
 }
 
 @keyframes bg-load {
@@ -21,17 +20,11 @@ body {
   100% {
     transform: scale(1, 1);
     transform-origin: center;
-    filter: brightness(0.8);
+    filter: brightness(1);
   }
 }
 
-/* .test {
-  color: white;
-  margin: 0;
-  animation: test-load 0.5s ease-in;
-} */
-
-.test {
+.kanji {
   width: 500px;
   color: white;
   position: absolute;
@@ -39,17 +32,48 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) translateY(-25%);
   white-space: nowrap;
-  animation: test-load 1s forwards;
+  animation: kanji-load 1.5s forwards;
   clip-path: polygon(0 0, 100% 0, 100% 1%, 0 1%);
 }
 
-@keyframes test-load {
+@keyframes kanji-load {
   25% {
     transform: translate(-50%, -50%) translateY(-25%);
     clip-path: polygon(0 0, 100% 0, 100% 1%, 0 1%);
   }
+  85%,
   100% {
     transform: translate(-50%, -50%) translateY(0);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.actor {
+  position: absolute;
+  top: calc(60% - 391px);
+  left: calc(50% - 126px);
+  animation: actor-load 1.5s;
+}
+
+@keyframes actor-load {
+  0%,
+  55% {
+    opacity: 0;
+  }
+  85%,
+  100% {
+    opacity: 100;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .kanji {
+    width: 300px;
+  }
+
+  .actor {
+    width: 150px;
+    top: calc(60% - 200px);
+    left: calc(50% - 75px);
   }
 }

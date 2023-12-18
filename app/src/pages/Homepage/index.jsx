@@ -1,11 +1,11 @@
 import "./index.css";
 
 export const Homepage = () => {
-  // 洋服屋
   return (
     <>
       <div className="bg"></div>
-      <img src="/public/brand.png" className="test" />
+      <img src="/public/brand.png" className="kanji" />
+      <img src="/public/actor.png" className="actor" />
     </>
   );
 };
